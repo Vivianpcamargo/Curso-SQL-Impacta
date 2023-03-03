@@ -1,0 +1,14 @@
+USE Concessionarias;
+
+-- Visualizar índices
+EXEC sp_help tblEstoque;
+
+-- criando índice
+CREATE NONCLUSTERED INDEX IX_tblEstoque
+ON tblEstoque(dataEntrada DESC);
+
+EXEC sp_helpindex tblEstoque;
+
+--Excluir um índice
+DROP INDEX IX_tblEstoque
+ON tblEstoque;
